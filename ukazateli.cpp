@@ -9,15 +9,26 @@ void printLetter(char* charPtr) {
     cout << *charPtr << endl;
 }
 
+void print(void* Ptr,char type) {
+    switch (type)
+    {
+        case 'i':cout << *((int*)Ptr) << endl;
+            break;
+        case 'c':cout << *((char*)Ptr) << endl;
+            break;
+    }
+
+
+}
 
 int main()
 {
     int number = 5;
     char letter = 'a';
-    printNumber(&number);
-    printLetter(&letter);
-
-
+   /* printNumber(&number);
+    printLetter(&letter);*/
+    print(&number, 'i');
+    print(&letter, 'c');
         system("pause>0");
         return 0;
 }
